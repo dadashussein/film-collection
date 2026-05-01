@@ -1,0 +1,83 @@
+.film-detail {
+  max-width: 900px;
+  margin: 0 auto;
+
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #f0f0f0;
+    }
+  }
+
+  &__layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+
+  &__poster {
+    width: 240px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+  }
+
+  &__meta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 1rem;
+    margin: 0 0 1.25rem;
+    font-size: 0.95rem;
+
+    dt {
+      font-weight: 600;
+      color: #555;
+    }
+
+    dd {
+      margin: 0;
+      color: #222;
+    }
+  }
+
+  &__description {
+    line-height: 1.7;
+    color: #444;
+  }
+
+  &__not-found {
+    text-align: center;
+    color: #888;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+  }
+}

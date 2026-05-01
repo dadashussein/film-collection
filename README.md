@@ -1,59 +1,58 @@
-# FilmCollection
+# Film Collection
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+A modern Angular application for browsing and managing a personal film collection. Search films by title, view detailed information, and mark your favorites.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Browse a list of films with poster, title, year, genre, and rating
+- Search films by title in real-time
+- Mark/unmark films as favorites
+- View full film details on a dedicated page
+- Responsive layout with header, breadcrumbs, and footer on every page
+
+## Tech Stack
+
+- Angular 21 (standalone components, signals, new control flow)
+- TypeScript (strict mode)
+- SCSS
+
+## How to Run
+
+### Prerequisites
+
+- Node.js (v18+)
+- Angular CLI: `npm install -g @angular/cli`
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start development server
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open your browser at `http://localhost:4200/`
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### Build for production
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Build artifacts will be in the `dist/` directory.
 
-## Running unit tests
+## Project Structure
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+src/
+├── app/
+│   ├── core/               # Layout, shared components (header, footer, breadcrumbs), services, models
+│   ├── features/           # Feature pages (home, film-detail, about)
+│   └── shared/             # Reusable directives and pipes
+└── public/
+    └── films.json          # Film data
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

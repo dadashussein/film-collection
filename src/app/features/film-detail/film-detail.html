@@ -1,0 +1,38 @@
+@if (film(); as f) {
+  <article class="film-detail">
+    <button class="film-detail__back" type="button" (click)="goBack()">
+      ← Back
+    </button>
+
+    <div class="film-detail__layout">
+      <img
+        class="film-detail__poster"
+        [src]="f.posterUrl"
+        [alt]="f.title + ' poster'"
+        (error)="onImageError($event)"
+      />
+
+      <div class="film-detail__info">
+        <h1 class="film-detail__title">{{ f.title }}</h1>
+
+        <dl class="film-detail__meta">
+          <dt>Year</dt>
+          <dd>{{ f.year }}</dd>
+
+          <dt>Genre</dt>
+          <dd>{{ f.genre }}</dd>
+
+          <dt>Rating</dt>
+          <dd>⭐ {{ f.rating }}</dd>
+
+          <dt>Duration</dt>
+          <dd>{{ f.duration | duration }}</dd>
+        </dl>
+
+        <p class="film-detail__description">{{ f.description }}</p>
+      </div>
+    </div>
+  </article>
+} @else {
+  <p class="film-detail__not-found">Film not found.</p>
+}
