@@ -1,1 +1,26 @@
-<p>home works!</p>
+<section class="home">
+  <div class="home__search-wrapper">
+    <input
+      appAutofocus
+      class="home__search"
+      type="search"
+      placeholder="Search films..."
+      [value]="searchQuery()"
+      (input)="onSearch($event)"
+      aria-label="Search films"
+    />
+  </div>
+
+  @if (filteredFilms().length > 0) {
+    <div class="home__grid">
+      @for (film of filteredFilms(); track film.id) {
+        <app-film-card
+          [film]="film"
+          (favoriteToggled)="onFavoriteToggled($event)"
+        />
+      }
+    </div>
+  } @else {
+    <p class="home__empty">Nothing found</p>
+  }
+</section>
