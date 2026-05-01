@@ -16,4 +16,12 @@ export class FilmCard {
     event.stopPropagation();
     this.favoriteToggled.emit(this.film().id);
   }
+
+  onImageError(event: Event) {
+  const img = event.target as HTMLImageElement;
+
+  if (!img.src.includes('placehold.co')) {
+    img.src = 'https://placehold.co/300x450?text=No+Image';
+  }
+}
 }

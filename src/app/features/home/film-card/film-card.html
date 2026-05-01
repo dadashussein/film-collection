@@ -1,0 +1,34 @@
+<article
+  class="film-card"
+  [routerLink]="['/films', film().id]"
+  role="link"
+  tabindex="0"
+  (keydown.enter)="null"
+  [attr.aria-label]="film().title"
+>
+  <img
+    class="film-card__poster"
+    [src]="film().posterUrl"
+    [alt]="film().title + ' poster'"
+    loading="lazy"
+    (error)="onImageError($event)"
+
+  />
+  <div class="film-card__body">
+    <h2 class="film-card__title">{{ film().title }}</h2>
+    <div class="film-card__meta">
+      <span class="film-card__year">{{ film().year }}</span>
+      <span class="film-card__genre">{{ film().genre }}</span>
+      <span class="film-card__rating">⭐ {{ film().rating }}</span>
+    </div>
+    <button
+      class="film-card__favorite"
+      [class.film-card__favorite--active]="film().isFavorite"
+      (click)="onFavoriteClick($event)"
+      [attr.aria-label]="film().isFavorite ? 'Remove from favorites' : 'Add to favorites'"
+      type="button"
+    >
+      {{ film().isFavorite ? '❤️ Favorited' : '🤍 Add to favorites' }}
+    </button>
+  </div>
+</article>
